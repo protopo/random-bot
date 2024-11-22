@@ -24,28 +24,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         'talk': 'Поговорить с известной личностью 👤',
         'quiz': 'Поучаствовать в квизе ❓',
         'cook': 'Узнать что приготовить 🍅'
-        # Добавить команду в меню можно так:
-        # 'command': 'button text'
-
     })
-
-# async def color(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     await send_text_buttons(update, context, 'Выбери любимый цвет: ', color_data)
-#
-# color_data = {
-#         'task_0': 'Зелёный',
-#         'task_1': 'Синий',
-#         'task_2': 'Красный',
-#         'task_3': 'Чёрный'
-# }
-# async def color_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     btn = update.callback_query.data
-#     await update.callback_query.answer()
-#     to_chatgpt = color_data[btn]
-#     chat_gpt.set_prompt('Дальше я напишу тебе мой любимый цвет. Покомментируй')
-#     message = await send_text(update, context, 'Думаю над ответом...')
-#     answer = await chat_gpt.add_message(to_chatgpt)
-#     await message.edit_text(answer)
 
 """get random fact"""
 async def random(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -56,7 +35,6 @@ async def random(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await message.edit_text(answer)
 
 """ask ChatGPT"""
-
 async def gpt(update: Update, context: ContextTypes.DEFAULT_TYPE):
     dialog.mode = 'gpt'
     prompt = load_prompt('gpt')
